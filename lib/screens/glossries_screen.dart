@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import "package:flutter/material.dart";
+import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:styled_text/styled_text.dart';
@@ -105,7 +106,7 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                   child: Text(
-                    "Glossary",
+                    AppLocalizations.of(context)!.translate('glossary')!,
                     style: GoogleFonts.oswald(
                       textStyle: TextStyle(
                         fontWeight: FontWeight.bold,

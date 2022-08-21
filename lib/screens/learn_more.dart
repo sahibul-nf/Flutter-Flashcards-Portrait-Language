@@ -1,15 +1,16 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../state_managment/dark_mode_state_manager.dart';
 import 'package:styled_text/styled_text.dart';
 
-class SeeMore extends ConsumerWidget {
+class LearnMore extends ConsumerWidget {
   final String text;
   final String categoryName;
   final Map<String, StyledTextTagBase> tags;
-  const SeeMore(
+  const LearnMore(
       {Key? key,
       required this.text,
       required this.tags,
@@ -30,10 +31,10 @@ class SeeMore extends ConsumerWidget {
             child: Row(
               children: [
                 const Spacer(flex: 2),
-                const AutoSizeText(
-                  "Learn more...",
+                AutoSizeText(
+                  AppLocalizations.of(context)!.translate('learn_more')!,
                   maxLines: 1,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 20,
                       color: Colors.blue,
                       fontWeight: FontWeight.bold),

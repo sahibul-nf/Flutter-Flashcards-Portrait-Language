@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -42,7 +43,8 @@ class SlideZero extends ConsumerWidget {
                           height: 15,
                         ),
                         AutoSizeText(
-                          'WELCOME',
+                          AppLocalizations.of(context)!.translate('welcome') ??
+                              "",
                           style: GoogleFonts.roboto(
                               textStyle: TextStyle(
                                   color: Theme.of(context).primaryColor,
@@ -61,7 +63,7 @@ class SlideZero extends ConsumerWidget {
                           width: 20,
                         ),
                         AutoSizeText(
-                          'WELCOME',
+                          AppLocalizations.of(context)!.translate('welcome')!,
                           style: GoogleFonts.roboto(
                               textStyle: TextStyle(
                                   color: Theme.of(context).primaryColor,
@@ -83,7 +85,8 @@ class SlideZero extends ConsumerWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: AutoSizeText(
-                  'Use this flashcards to learn and understand vocabulary, terms and data protection regulations.',
+                  AppLocalizations.of(context)!
+                      .translate('main_screen_subtitle')!,
                   maxLines: 5,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.oswald(

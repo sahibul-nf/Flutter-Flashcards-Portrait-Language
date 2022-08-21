@@ -1,7 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:flutter_flashcards_portrait/screens/splash_screen.dart';
+import 'package:flutter_flashcards_portrait/state_managment/localization_state_manager.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,9 +23,31 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     bool darkMode = ref.watch(darkModeStateManagerProvider);
+    Locale? _locale = ref.watch(localizationStateManagerProvider);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Web for Slides',
+      locale: _locale,
+      supportedLocales: const [
+        Locale('en', ''),
+        Locale('de', ''),
+      ],
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale?.languageCode) {
+            return supportedLocale;
+          }
+        }
+        // If the locale of the device is not supported, use the first one
+        // from the list (English, in this case).
+        return supportedLocales.first;
+      },
       theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: const Color(0xff333333),

@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -99,8 +100,9 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                             ),
                           ),
                         ),
-                        child: Text(
-                          'Start Studying',
+                        child: AutoSizeText(
+                          AppLocalizations.of(context)!
+                              .translate('start_studying')!,
                           style: GoogleFonts.robotoSlab(
                             textStyle: const TextStyle(
                               color: Colors.white,
@@ -128,8 +130,8 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                           children: [
                             const Icon(Icons.settings_backup_restore_outlined),
                             const SizedBox(width: 5),
-                            Text(
-                              'Reset',
+                            AutoSizeText(
+                              AppLocalizations.of(context)!.translate('reset')!,
                               style: GoogleFonts.robotoSlab(
                                 textStyle: const TextStyle(
                                   color: Colors.white,

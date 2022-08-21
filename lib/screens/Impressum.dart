@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,7 +14,8 @@ class ImpressumScreen extends ConsumerWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: AutoSizeText("Impressum",
+          title: AutoSizeText(
+              AppLocalizations.of(context)!.translate('impressum')!,
               maxLines: 1,
               style: TextStyle(
                   fontSize: 16,

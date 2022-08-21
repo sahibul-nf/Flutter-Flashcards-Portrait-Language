@@ -1,10 +1,11 @@
-import 'dart:convert';
 import 'dart:ui';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:flutter_flashcards_portrait/screens/categories_screen.dart';
+import 'package:flutter_flashcards_portrait/state_managment/localization_state_manager.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -37,27 +38,22 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   }
 
   Future<void> loadData() async {
-    String data =
-        await DefaultAssetBundle.of(context).loadString("assets/slides.json");
-    final jsonResult = jsonDecode(data); //latest Dart
-    final catJson = jsonResult['Categories'];
     setState(() {
-      title = jsonResult['title'];
-      lesson = jsonResult['lesson'];
-      categories =
-          List<Category>.from(catJson.map((e) => Category.fromJson(e)));
+      categories = AppLocalizations.of(context)!.getCategories();
+      title = AppLocalizations.of(context)!.translate('title')!;
+      lesson = AppLocalizations.of(context)!.translate('lesson')!;
       list = [
         SlideZero(startLesson, title),
         CategoriesScreen(title: title, lesson: lesson),
       ];
     });
-    WidgetsBinding.instance.addPostFrameCallback((_) =>
-        ref.read(categoriesStateManagerProvider.notifier).init(categories));
+    ref.read(categoriesStateManagerProvider.notifier).init(categories);
   }
 
   @override
   void initState() {
-    loadData();
+    WidgetsBinding.instance.addPostFrameCallback((_) => loadData());
+
     super.initState();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -116,6 +112,39 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    PopupMenuButton<String>(
+                      child: Icon(
+                        Icons.language,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      onSelected: (String value) => ref
+                          .read(localizationStateManagerProvider.notifier)
+                          .switchLanguage(value),
+                      itemBuilder: (BuildContext context) {
+                        return {
+                          "en",
+                          "de",
+                        }.map((String choice) {
+                          bool isSelected =
+                              Localizations.localeOf(context).languageCode ==
+                                  choice;
+                          return PopupMenuItem<String>(
+                            value: choice,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(choice == "en" ? "English" : "German"),
+                                if (isSelected)
+                                  const Icon(
+                                    Icons.check,
+                                    color: Colors.black,
+                                  )
+                              ],
+                            ),
+                          );
+                        }).toList();
+                      },
+                    ),
                     PopupMenuButton<String>(
                       child: Icon(
                         Icons.more_vert,

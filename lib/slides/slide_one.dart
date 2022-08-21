@@ -2,12 +2,14 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_flashcards_portrait/app_localizations.dart';
+import 'package:flutter_flashcards_portrait/models/tags.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:styled_text/styled_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../screens/see_more.dart';
+import '../screens/learn_more.dart';
 import '../models/slide.dart';
 
 class SlideOne extends ConsumerStatefulWidget {
@@ -15,10 +17,12 @@ class SlideOne extends ConsumerStatefulWidget {
   final String categoryName;
   final int pages;
   final Function flip;
+  final List<Tags> tags;
   final FlipCardController controller;
   const SlideOne({
     Key? key,
     required this.slide,
+    required this.tags,
     required this.categoryName,
     required this.pages,
     required this.flip,
@@ -34,7 +38,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
 
   @override
   void initState() {
-    widget.slide.tags.forEach((element) {
+    widget.tags.forEach((element) {
       int color = int.parse("0xff" + element.color);
       FontWeight fontWeight =
           element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
@@ -143,7 +147,8 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                         children: [
                           RichText(
                             text: TextSpan(
-                              text: "Learn more...",
+                              text: AppLocalizations.of(context)!
+                                  .translate('learn_more')!,
                               style: GoogleFonts.robotoCondensed(
                                   textStyle: const TextStyle(
                                 height: 1.7,
@@ -154,7 +159,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                                 ..onTap = () => Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => SeeMore(
+                                          builder: (context) => LearnMore(
                                               categoryName: widget.categoryName,
                                               tags: tags,
                                               text: widget.slide.learnMore)),

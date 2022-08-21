@@ -1,5 +1,6 @@
 import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:flutter_flashcards_portrait/models/slide.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -47,6 +48,7 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
     for (int i = 0; i < slides.length; i++) {
       list.add(SlideOne(
         slide: slides[i],
+        tags: widget.category.tags,
         categoryName: categoryName,
         flip: flip,
         controller: _controllers[i],
@@ -309,7 +311,9 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                               Icons.check,
                               color: Colors.green,
                             ),
-                            Text('Got it',
+                            Text(
+                                AppLocalizations.of(context)!
+                                    .translate('missed_it')!,
                                 style: GoogleFonts.robotoSlab(
                                     textStyle: const TextStyle(
                                   color: Colors.blue,
@@ -342,7 +346,9 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                               Icons.close,
                               color: Colors.red,
                             ),
-                            Text('Missed it',
+                            Text(
+                                AppLocalizations.of(context)!
+                                    .translate('got_it')!,
                                 style: GoogleFonts.robotoSlab(
                                     textStyle: const TextStyle(
                                   color: Colors.blue,
@@ -433,7 +439,10 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                               fontWeight: FontWeight.w500)),
                     )),
                 const Spacer(),
-                Text(isQuestion ? "QUESTION" : "ANSWER",
+                Text(
+                    isQuestion
+                        ? AppLocalizations.of(context)!.translate('question')!
+                        : AppLocalizations.of(context)!.translate('answer')!,
                     style: GoogleFonts.robotoSlab(
                       textStyle: GoogleFonts.robotoSlab(
                           textStyle: const TextStyle(
