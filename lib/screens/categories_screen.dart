@@ -10,10 +10,9 @@ import '../state_managment/categories_state_manager.dart';
 import 'slides_screen.dart';
 
 class CategoriesScreen extends ConsumerStatefulWidget {
-  final String title;
-  final String lesson;
-  const CategoriesScreen({Key? key, required this.title, required this.lesson})
-      : super(key: key);
+  const CategoriesScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   ConsumerState<CategoriesScreen> createState() => _CategoriesScreenState();

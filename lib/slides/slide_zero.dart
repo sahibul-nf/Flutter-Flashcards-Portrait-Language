@@ -5,9 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SlideZero extends ConsumerWidget {
-  final String title;
   final Function startLesson;
-  const SlideZero(this.startLesson, this.title, {Key? key}) : super(key: key);
+  const SlideZero(this.startLesson, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     double width = MediaQuery.of(context).size.width;
@@ -73,7 +72,7 @@ class SlideZero extends ConsumerWidget {
                       ],
                     ),
               AutoSizeText(
-                '$title FlashCards',
+                '${AppLocalizations.of(context)!.translate('title')} FlashCards',
                 maxLines: 4,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.oswald(

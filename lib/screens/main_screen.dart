@@ -27,8 +27,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   late int page;
   List<Widget> list = [];
   List<Category> categories = [];
-  String title = "";
-  String lesson = "";
 
   late PageController pageControllerH;
 
@@ -40,11 +38,9 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   Future<void> loadData() async {
     setState(() {
       categories = AppLocalizations.of(context)!.getCategories();
-      title = AppLocalizations.of(context)!.translate('title')!;
-      lesson = AppLocalizations.of(context)!.translate('lesson')!;
       list = [
-        SlideZero(startLesson, title),
-        CategoriesScreen(title: title, lesson: lesson),
+        SlideZero(startLesson),
+        const CategoriesScreen(),
       ];
     });
     ref.read(categoriesStateManagerProvider.notifier).init(categories);
@@ -62,8 +58,8 @@ class _MainScreenState extends ConsumerState<MainScreen> {
     setState(() {
       page = widget.initPage;
       list = [
-        SlideZero(startLesson, title),
-        CategoriesScreen(title: title, lesson: lesson),
+        SlideZero(startLesson),
+        const CategoriesScreen(),
       ];
     });
     pageControllerH = PageController(initialPage: page);
@@ -210,7 +206,8 @@ class _MainScreenState extends ConsumerState<MainScreen> {
             height: 45,
             child: Align(
               alignment: Alignment.centerLeft,
-              child: AutoSizeText(title,
+              child: AutoSizeText(
+                  AppLocalizations.of(context)!.translate('title')!,
                   maxLines: 1,
                   style: GoogleFonts.robotoSlab(
                     textStyle: GoogleFonts.robotoSlab(
