@@ -75,35 +75,38 @@ class MyApp extends ConsumerWidget {
               height: 100,
             ),
             const SizedBox(
-              height: 60,
+              height: 40,
             ),
-            DefaultTextStyle(
-              textAlign: TextAlign.center,
-              style: GoogleFonts.robotoMono(
-                color: Colors.black,
-                textStyle: const TextStyle(
-                  fontSize: 28,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: DefaultTextStyle(
+                textAlign: TextAlign.center,
+                style: GoogleFonts.robotoMono(
+                  color: Colors.black,
+                  textStyle: const TextStyle(
+                    fontSize: 28,
+                  ),
                 ),
-              ),
-              child: AnimatedTextKit(
-                isRepeatingAnimation: false,
-                animatedTexts: [
-                  TypewriterAnimatedText('Accelerated Learning',
-                      textAlign: TextAlign.center,
-                      speed: const Duration(milliseconds: 100),
-                      cursor: ""),
-                ],
+                child: AnimatedTextKit(
+                  isRepeatingAnimation: false,
+                  animatedTexts: [
+                    TypewriterAnimatedText('Accelerated Learning',
+                        textAlign: TextAlign.center,
+                        speed: const Duration(milliseconds: 100),
+                        cursor: ""),
+                  ],
+                ),
               ),
             ),
             const SizedBox(
-              height: 100,
+              height: 150,
             ),
             DefaultTextStyle(
               textAlign: TextAlign.center,
-              style: GoogleFonts.robotoCondensed(
-                color: Colors.black,
+              style: GoogleFonts.oswald(
+                color: Colors.red,
                 textStyle:
-                    const TextStyle(fontWeight: FontWeight.w600, fontSize: 38),
+                    const TextStyle(fontWeight: FontWeight.w400, fontSize: 48),
               ),
               child: AnimatedTextKit(
                 isRepeatingAnimation: false,
@@ -116,6 +119,9 @@ class MyApp extends ConsumerWidget {
                       cursor: ""),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 100,
             ),
           ],
         ),

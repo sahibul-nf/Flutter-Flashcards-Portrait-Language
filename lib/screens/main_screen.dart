@@ -145,6 +145,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                         }).toList();
                       },
                     ),
+                    const SizedBox(width: 8),
                     PopupMenuButton<String>(
                       child: Icon(
                         Icons.more_vert,
