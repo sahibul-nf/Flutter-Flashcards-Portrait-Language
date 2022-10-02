@@ -18,51 +18,10 @@ class GlossariesScreen extends ConsumerStatefulWidget {
 
 class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
   late Map<String, StyledTextTagBase> tags = {};
-  @override
-  void initState() {
-    for (var element in widget.category.tags) {
-      int color = int.parse("0xff" + element.color);
-      FontWeight fontWeight =
-          element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
-      setState(() {
-        tags.putIfAbsent(
-          element.tag,
-          () => element.tag == 'link'
-              ? StyledTextActionTag(
-                  (String? text, Map<String?, String?> attrs) async {
-                    final String? link = attrs['href'];
-                    launch(link!);
-                  },
-                  style: GoogleFonts.robotoCondensed(
-                      textStyle: TextStyle(
-                          fontFamily: "RobotoSerif",
-                          fontWeight: fontWeight,
-                          decoration: element.isUnderLine
-                              ? TextDecoration.underline
-                              : null,
-                          fontSize:
-                              (element.fontSize != 0) ? element.fontSize : null,
-                          color: (element.color != "") ? Color(color) : null)),
-                )
-              : StyledTextTag(
-                  style: GoogleFonts.robotoCondensed(
-                      textStyle: TextStyle(
-                          fontWeight: fontWeight,
-                          decoration: element.isUnderLine
-                              ? TextDecoration.underline
-                              : null,
-                          fontSize:
-                              (element.fontSize != 0) ? element.fontSize : null,
-                          color: (element.color != "") ? Color(color) : null)),
-                ),
-        );
-      });
-    }
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
+    updateTags();
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -170,5 +129,68 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                 )
               ],
             )));
+  }
+
+  void updateTags() {
+    tags.clear();
+    for (var element in widget.category.tags) {
+      int color = int.parse("0xff" + element.color);
+      FontWeight fontWeight =
+          element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
+      setState(() {
+        tags.putIfAbsent(element.tag, () {
+          if (element.tag == 'link') {
+            return StyledTextActionTag(
+              (String? text, Map<String?, String?> attrs) async {
+                final String? link = attrs['href'];
+                launch(link!);
+              },
+              style: GoogleFonts.robotoCondensed(
+                  textStyle: TextStyle(
+                      fontFamily: "RobotoSerif",
+                      fontWeight: fontWeight,
+                      decoration:
+                          element.isUnderLine ? TextDecoration.underline : null,
+                      fontSize:
+                          (element.fontSize != 0) ? element.fontSize : null,
+                      color: (element.color != "") ? Color(color) : null)),
+            );
+          } else if (element.tag == 'tooltip') {
+            return StyledTextWidgetBuilderTag(
+              (context, attributes) => Tooltip(
+                  message: attributes['message'],
+                  triggerMode: TooltipTriggerMode.tap,
+                  child: Text(
+                    attributes['text']!,
+                    style: TextStyle(
+                        fontFamily: "RobotoSerif",
+                        fontWeight: fontWeight,
+                        fontSize: (element.fontSize != 0)
+                            ? element.fontSize
+                            : (MediaQuery.of(context).size.longestSide /
+                                    MediaQuery.of(context).size.shortestSide) *
+                                15,
+                        color: (element.color != "") ? Color(color) : null),
+                  )),
+            );
+          } else {
+            return StyledTextTag(
+              style: GoogleFonts.robotoCondensed(
+                textStyle: TextStyle(
+                    fontWeight: fontWeight,
+                    decoration:
+                        element.isUnderLine ? TextDecoration.underline : null,
+                    fontSize: (element.fontSize != 0)
+                        ? element.fontSize
+                        : (MediaQuery.of(context).size.longestSide /
+                                MediaQuery.of(context).size.shortestSide) *
+                            15,
+                    color: (element.color != "") ? Color(color) : null),
+              ),
+            );
+          }
+        });
+      });
+    }
   }
 }
