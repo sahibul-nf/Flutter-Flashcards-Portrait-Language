@@ -55,11 +55,11 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
         pages: slides.length,
       ));
     }
-    super.initState();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    super.initState();
   }
 
   void flip({bool? status}) {
@@ -173,8 +173,8 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
                   onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => GlossariesScreen(
-                          glossries: widget.category.glossries))),
+                      builder: (context) =>
+                          GlossariesScreen(category: widget.category))),
                   icon: Icon(
                     Icons.collections_bookmark,
                     color: Theme.of(context).primaryColor,

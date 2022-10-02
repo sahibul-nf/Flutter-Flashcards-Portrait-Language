@@ -1,16 +1,16 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_flashcards_portrait/app_localizations.dart';
+import 'package:flutter_flashcards_portrait/models/category.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:styled_text/styled_text.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../models/glossry.dart';
 import '../state_managment/dark_mode_state_manager.dart';
 
 class GlossariesScreen extends ConsumerStatefulWidget {
-  final List<Glossry> glossries;
-  const GlossariesScreen({Key? key, required this.glossries}) : super(key: key);
+  final Category category;
+  const GlossariesScreen({Key? key, required this.category}) : super(key: key);
 
   @override
   ConsumerState<GlossariesScreen> createState() => _GlossariesScreenState();
@@ -20,7 +20,7 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
   late Map<String, StyledTextTagBase> tags = {};
   @override
   void initState() {
-    widget.glossries[0].tags.forEach((element) {
+    for (var element in widget.category.tags) {
       int color = int.parse("0xff" + element.color);
       FontWeight fontWeight =
           element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
@@ -57,7 +57,8 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                 ),
         );
       });
-    });
+    }
+    super.initState();
   }
 
   @override
@@ -118,7 +119,7 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                 ),
                 Expanded(
                   child: ListView.builder(
-                      itemCount: widget.glossries.length,
+                      itemCount: widget.category.glossries.length,
                       itemBuilder: (context, index) {
                         return Card(
                           child: ExpansionTile(
@@ -130,7 +131,7 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   AutoSizeText(
-                                    widget.glossries[index].title,
+                                    widget.category.glossries[index].title,
                                     maxLines: 1,
                                     style: GoogleFonts.robotoCondensed(
                                       textStyle: TextStyle(
@@ -144,13 +145,14 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                             ),
                             children: [
                               ...List<Widget>.generate(
-                                  widget.glossries[index].questions.length,
-                                  (i) {
+                                  widget.category.glossries[index].questions
+                                      .length, (i) {
                                 return Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: StyledText(
                                     textAlign: TextAlign.left,
-                                    text: widget.glossries[index].questions[i],
+                                    text: widget
+                                        .category.glossries[index].questions[i],
                                     style: GoogleFonts.robotoCondensed(
                                         textStyle: TextStyle(
                                       fontWeight: FontWeight.normal,
