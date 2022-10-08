@@ -17,12 +17,10 @@ class SlideOne extends ConsumerStatefulWidget {
   final String categoryName;
   final int pages;
   final Function flip;
-  final List<Tags> tags;
   final FlipCardController controller;
   const SlideOne({
     Key? key,
     required this.slide,
-    required this.tags,
     required this.categoryName,
     required this.pages,
     required this.flip,
@@ -138,8 +136,9 @@ class _SlideOneState extends ConsumerState<SlideOne> {
   }
 
   void updateTags() {
+    List<Tags> tagsList = AppLocalizations.of(context)!.getTags();
     tags.clear();
-    for (var element in widget.tags) {
+    for (var element in tagsList) {
       int color = int.parse("0xff" + element.color);
       FontWeight fontWeight =
           element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;

@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_flashcards_portrait/models/category.dart';
+import 'package:flutter_flashcards_portrait/models/tags.dart';
 
 class AppLocalizations {
   final Locale locale;
@@ -20,6 +21,7 @@ class AppLocalizations {
 
   late Map<String, String> _localizedStrings;
   late List<Category> categories;
+  late List<Tags> tags;
   Future<bool> load() async {
     // Load the language JSON file from the "lang" folder
     String jsonString =
@@ -32,6 +34,7 @@ class AppLocalizations {
     });
     categories = List<Category>.from(
         (jsonMap['Categories']).map((e) => Category.fromJson(e)));
+    tags = List<Tags>.from((jsonMap['tags']).map((e) => Tags.fromJson(e)));
     return true;
   }
 
@@ -39,6 +42,10 @@ class AppLocalizations {
 
   List<Category> getCategories() {
     return categories;
+  }
+
+  List<Tags> getTags() {
+    return tags;
   }
 
   String? translate(String key) {

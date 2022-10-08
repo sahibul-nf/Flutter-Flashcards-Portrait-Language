@@ -48,7 +48,6 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
     for (int i = 0; i < slides.length; i++) {
       list.add(SlideOne(
         slide: slides[i],
-        tags: widget.category.tags,
         categoryName: categoryName,
         flip: flip,
         controller: _controllers[i],

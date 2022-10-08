@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:flutter_flashcards_portrait/models/category.dart';
+import 'package:flutter_flashcards_portrait/models/tags.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:styled_text/styled_text.dart';
@@ -132,8 +133,9 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
   }
 
   void updateTags() {
+    List<Tags> tagsList = AppLocalizations.of(context)!.getTags();
     tags.clear();
-    for (var element in widget.category.tags) {
+    for (var element in tagsList) {
       int color = int.parse("0xff" + element.color);
       FontWeight fontWeight =
           element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
