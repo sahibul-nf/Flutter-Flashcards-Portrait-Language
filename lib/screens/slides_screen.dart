@@ -312,7 +312,7 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                             ),
                             Text(
                                 AppLocalizations.of(context)!
-                                    .translate('missed_it')!,
+                                    .translate('got_it')!,
                                 style: GoogleFonts.robotoSlab(
                                     textStyle: const TextStyle(
                                   color: Colors.blue,
@@ -347,7 +347,7 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                             ),
                             Text(
                                 AppLocalizations.of(context)!
-                                    .translate('got_it')!,
+                                    .translate('missed_it')!,
                                 style: GoogleFonts.robotoSlab(
                                     textStyle: const TextStyle(
                                   color: Colors.blue,
