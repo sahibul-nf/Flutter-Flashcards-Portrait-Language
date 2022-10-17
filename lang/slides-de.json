@@ -16,7 +16,10 @@
 		{
 			"tag_name": "tooltip",
 			"fontWeight": "bold",
-			"color" : "c16464"
+			"color" : "c16464",
+			"decorationColor" : "006D5B",
+			"messageFontSize" : 16,
+			"underLine": true
 		},
 		{
 			"tag_name": "bold",

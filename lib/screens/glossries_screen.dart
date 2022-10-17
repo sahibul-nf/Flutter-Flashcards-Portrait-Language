@@ -137,6 +137,8 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
     tags.clear();
     for (var element in tagsList) {
       int color = int.parse("0xff" + element.color);
+      int decorationColor = int.parse("0xff" + element.decorationColor);
+
       FontWeight fontWeight =
           element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
       setState(() {
@@ -153,6 +155,9 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                       fontWeight: fontWeight,
                       decoration:
                           element.isUnderLine ? TextDecoration.underline : null,
+                      decorationColor: (element.decorationColor != "")
+                          ? Color(decorationColor)
+                          : null,
                       fontSize:
                           (element.fontSize != 0) ? element.fontSize : null,
                       color: (element.color != "") ? Color(color) : null)),
@@ -162,11 +167,25 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
               (context, attributes) => Tooltip(
                   message: attributes['message'],
                   triggerMode: TooltipTriggerMode.tap,
+                  textStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.black
+                            : Colors.white,
+                        fontSize: (element.messageFontSize != 0)
+                            ? element.messageFontSize
+                            : null,
+                      ),
                   child: Text(
                     attributes['text']!,
                     style: TextStyle(
                         fontFamily: "RobotoSerif",
                         fontWeight: fontWeight,
+                        decoration: element.isUnderLine
+                            ? TextDecoration.underline
+                            : null,
+                        decorationColor: (element.decorationColor != "")
+                            ? Color(decorationColor)
+                            : null,
                         fontSize: (element.fontSize != 0)
                             ? element.fontSize
                             : (MediaQuery.of(context).size.longestSide /
@@ -178,17 +197,19 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
           } else {
             return StyledTextTag(
               style: GoogleFonts.robotoCondensed(
-                textStyle: TextStyle(
-                    fontWeight: fontWeight,
-                    decoration:
-                        element.isUnderLine ? TextDecoration.underline : null,
-                    fontSize: (element.fontSize != 0)
-                        ? element.fontSize
-                        : (MediaQuery.of(context).size.longestSide /
-                                MediaQuery.of(context).size.shortestSide) *
-                            15,
-                    color: (element.color != "") ? Color(color) : null),
-              ),
+                  textStyle: TextStyle(
+                      fontWeight: fontWeight,
+                      decoration:
+                          element.isUnderLine ? TextDecoration.underline : null,
+                      decorationColor: (element.decorationColor != "")
+                          ? Color(decorationColor)
+                          : null,
+                      fontSize: (element.fontSize != 0)
+                          ? element.fontSize
+                          : (MediaQuery.of(context).size.longestSide /
+                                  MediaQuery.of(context).size.shortestSide) *
+                              15,
+                      color: (element.color != "") ? Color(color) : null)),
             );
           }
         });
