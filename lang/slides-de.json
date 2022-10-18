@@ -1,12 +1,12 @@
 {
-	"title": "Allgemeine Datenschutz Regein(ADSR)",
+	"title": "Allgemeine Datenschutz Regeln (ADSR)",
 	"lesson": "Q & A",
 	"welcome": "Willkommen",
 	"main_screen_subtitle" : "Nutze diese Lernkarten, um Vokabeln, Begriffe und Datenschutzbestimmungen zu lernen und zu verstehen.",
 	"learn_more" : "Mehr erfahren...",
-	"start_studying" : "beginne zu lernen",
+	"start_studying" : "Beginne zu lernen",
 	"got_it": "Ich habs",
-	"missed_it" :"Es verpasst",
+	"missed_it" :"Nochmal",
 	"glossary" : "Glossar",
 	"reset" : "Reset",
 	"impressum" : "Impressum",
@@ -15,7 +15,6 @@
 	"tags": [
 		{
 			"tag_name": "tooltip",
-			"fontWeight": "bold",
 			"color" : "c16464",
 			"decorationColor" : "006D5B",
 			"messageFontSize" : 16,
@@ -23,6 +22,10 @@
 		},
 		{
 			"tag_name": "bold",
+			"fontWeight" : "bold" 
+		},
+		{
+			"tag_name": "bold36",
 			"fontWeight" : "bold",
 			"fontSize" : 36 
 		},
@@ -33,7 +36,8 @@
 		},
 		{
 			"tag_name": "redthin",
-			"color" : "c16464"
+			"color" : "c16464",
+			"fontSize" : 19
 		},
 		{
 			"tag_name": "boldtxt",
@@ -53,9 +57,9 @@
 			"explanation" : "Fragen und Antworten zum Schutz von personenbezogenen Daten - DSGVO - Datenschutz und Privatsphäre. Seit dem 25. Mai 2018 gilt die DSGVO in allen EU-Mitgliedsstaaten und für alle Unternehmen, die personenbezogene Daten von europäischen Bürgern verarbeiten.  \n\nQuelle:<link href='https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/'> blog.atinternet.com </link> ",
 			"slides": [
 				{
-					"First Side": "Was ist die <tooltip text='DSGVO?' message='DSGVO pop up explanation'/> ",
+					"First Side": "Was ist die <red>DSGVO?</red>",
 					"Second Side": "<boldtxt>Verordnung der Europäischen Union</boldtxt>, die den Umgang mit personenbezogenen Daten und Informationen standardisiert, insbesondere <redthin>Sicherheit und Schutz von personenbezogenen Daten</redthin>.",
-					"Learn more": "Mit Wirkung zum <boldtxt>25. Mai 2018</boldtxt> ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). \n\nEs geht auch um den Export und Transfer personenbezogener Daten <boldtxt>außerhalb</boldtxt> der EU und EWR-Gebiete. \n\nIn einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die <boldtxt>Regulierung innerhalb der EU vereinheitlicht</boldtxt>.\n\nSeit ihrer Umsetzung ist die <redthin>DSGVO weltweit zu einem Standard</redthin> geworden."
+					"Learn more": "Mit Wirkung zum <bold>25. Mai 2018</bold> ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (<tooltip text='EWR' message='Europäischer Wirtschaftsraum'/>). \n\nEs geht auch um den Export und Transfer personenbezogener Daten <boldtxt>außerhalb</boldtxt> der EU und EWR-Gebiete. \n\nIn einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die <boldtxt>Regulierung innerhalb der EU vereinheitlicht</boldtxt>.\n\nSeit ihrer Umsetzung ist die <redthin>DSGVO weltweit zu einem Standard</redthin> geworden."
 				},	
 				
 					{
