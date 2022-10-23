@@ -22,6 +22,7 @@ class AppLocalizations {
   late Map<String, String> _localizedStrings;
   late List<Category> categories;
   late List<Tags> tags;
+  late List<String> activeLanguages;
   Future<bool> load() async {
     // Load the language JSON file from the "lang" folder
     String jsonString =
@@ -35,6 +36,7 @@ class AppLocalizations {
     categories = List<Category>.from(
         (jsonMap['Categories']).map((e) => Category.fromJson(e)));
     tags = List<Tags>.from((jsonMap['tags']).map((e) => Tags.fromJson(e)));
+    activeLanguages = List<String>.from((jsonMap['activeLanguages']));
     return true;
   }
 
@@ -42,6 +44,10 @@ class AppLocalizations {
 
   List<Category> getCategories() {
     return categories;
+  }
+
+  List<String> getActiveLanguages() {
+    return activeLanguages;
   }
 
   List<Tags> getTags() {

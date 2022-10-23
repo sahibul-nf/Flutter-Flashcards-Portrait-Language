@@ -2,77 +2,77 @@
 	"title": "Allgemeine Datenschutz Regeln (ADSR)",
 	"lesson": "Q & A",
 	"welcome": "Willkommen",
-	"main_screen_subtitle" : "Nutze diese Lernkarten, um Vokabeln, Begriffe und Datenschutzbestimmungen zu lernen und zu verstehen.",
-	"learn_more" : "Mehr erfahren...",
-	"start_studying" : "Beginne zu lernen",
+	"main_screen_subtitle": "Nutze diese Lernkarten, um Vokabeln, Begriffe und Datenschutzbestimmungen zu lernen und zu verstehen.",
+	"learn_more": "Mehr erfahren >",
+	"start_studying": "Beginne zu lernen",
 	"got_it": "Ich habs",
-	"missed_it" :"Nochmal",
-	"glossary" : "Glossar",
-	"reset" : "Reset",
-	"impressum" : "Impressum",
-	"question" : "FRAGE",
-	"answer" : "ANTWORTEN",
+	"missed_it": "Nochmal",
+	"glossary": "Glossar",
+	"reset": "Reset",
+	"impressum": "Impressum",
+	"question": "FRAGE",
+	"answer": "ANTWORTEN",
+	"activeLanguages" : [
+		"en",
+		"de"
+	],
 	"tags": [
 		{
 			"tag_name": "tooltip",
-			"color" : "c16464",
-			"decorationColor" : "006D5B",
-			"messageFontSize" : 16,
+			"color": "c16464",
+			"decorationColor": "006D5B",
+			"messageFontSize": 16,
+			"fontSize": 20,
 			"underLine": true
 		},
 		{
 			"tag_name": "bold",
-			"fontWeight" : "bold" 
+			"fontWeight": "bold"
 		},
 		{
 			"tag_name": "bold36",
-			"fontWeight" : "bold",
-			"fontSize" : 36 
+			"fontWeight": "bold",
+			"fontSize": 36
 		},
 		{
 			"tag_name": "red",
 			"fontWeight": "bold",
-			"color" : "c16464"
+			"color": "c16464"
 		},
 		{
 			"tag_name": "redthin",
-			"color" : "c16464",
-			"fontSize" : 19
+			"color": "c16464"
 		},
 		{
 			"tag_name": "boldtxt",
-			"fontWeight": "bold",
-			"fontSize" : 19
+			"fontWeight": "bold"
 		},
 		{
 			"tag_name": "font",
-			"font-family" : "Roboto",
-			"fontSize" : 42 
+			"font-family": "Roboto",
+			"fontSize": 42
 		}
 	],
-	"Categories" : [
+	"Categories": [
 		{
-			"categoryName" : "DSGVO / GDPR",
+			"categoryName": "DSGVO / GDPR",
 			"FlashCardMaker": "Chris Tighe",
-			"explanation" : "Fragen und Antworten zum Schutz von personenbezogenen Daten - DSGVO - Datenschutz und Privatsphäre. Seit dem 25. Mai 2018 gilt die DSGVO in allen EU-Mitgliedsstaaten und für alle Unternehmen, die personenbezogene Daten von europäischen Bürgern verarbeiten.  \n\nQuelle:<link href='https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/'> blog.atinternet.com </link> ",
+			"explanation": "Fragen und Antworten zum Schutz von personenbezogenen Daten - DSGVO - Datenschutz und Privatsphäre. Seit dem 25. Mai 2018 gilt die DSGVO in allen EU-Mitgliedsstaaten und für alle Unternehmen, die personenbezogene Daten von europäischen Bürgern verarbeiten.  \n\nQuelle:<link href='https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/'> blog.atinternet.com </link> ",
 			"slides": [
 				{
 					"First Side": "Was ist die <br><red>DSGVO?</red>",
 					"Second Side": "<boldtxt>Verordnung der Europäischen Union</boldtxt>, die den Umgang mit personenbezogenen Daten und Informationen standardisiert, insbesondere <redthin>Sicherheit und Schutz von personenbezogenen Daten</redthin>.",
 					"Learn more": "Mit Wirkung zum <bold>25. Mai 2018</bold> ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (<tooltip text='EWR' message='Europäischer Wirtschaftsraum'/>). \n\nEs geht auch um den Export und Transfer personenbezogener Daten <boldtxt>außerhalb</boldtxt> der EU und EWR-Gebiete. \n\nIn einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die <boldtxt>Regulierung innerhalb der EU vereinheitlicht</boldtxt>.\n\nSeit ihrer Umsetzung ist die <redthin>DSGVO weltweit zu einem Standard</redthin> geworden."
-				},	
-				
-					{
+				},
+				{
 					"First Side": "Wer ist in erster Linie von der <red>DSGVO</red> betroffen?",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine <redthin>natürliche Person</redthin>, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. \n\nDer Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. \n\nDer Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. \n\nDer Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. \n\nDie DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. \n\nVerantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
-					
 				},
 				{
 					"First Side": "Was wird in der DSGVO als rechtmäßige Einwilligung betrachtet?",
 					"Second Side": "Eine eindeutige bestätigende Handlung, durch die die Person frei, in einer spezifischen und informierten Weise, ihre Zustimmung zur Datenverarbeitung ausdrückt.",
 					"Learn more": "Nach der DSGVO muss die Einwilligung durch eine eindeutige positive Handlung erfolgen, mit der die betroffene Person frei, konkret, informiert und unmissverständlich ihre Zustimmung zur Verarbeitung personenbezogener Daten zum Ausdruck bringt - zum Beispiel durch eine schriftliche Erklärung, auch auf elektronischem Wege, oder eine mündliche Erklärung. Dies könnte durch das Ankreuzen eines Kästchens beim Aufrufen einer Website, durch die Zustimmung zu bestimmten technischen Parametern für IT-Dienste oder durch eine andere Erklärung oder ein anderes Verhalten geschehen, aus dem klar hervorgeht, dass die betroffene Person mit der vorgeschlagenen Verarbeitung ihrer personenbezogenen Daten einverstanden ist. Bei Schweigen, nicht angekreuzten Kästchen oder Inaktivität kann daher keine Einwilligung vorliegen. Die erteilte Einwilligung gilt für alle Verarbeitungstätigkeiten mit demselben Zweck/denselben Zwecken. Dient die Verarbeitung mehreren Zwecken, muss die Einwilligung für alle Zwecke erteilt werden. Wenn die Einwilligung der betroffenen Person auf eine elektronische Anfrage hin erteilt wird, muss die Anfrage klar und prägnant sein und darf die Nutzung des Dienstes, für den sie erteilt wird, nicht unnötig stören."
-
 				},
 				{
 					"First Side": "Wie hoch ist die maximale Geldstrafe für die Nichteinhaltung der DSGVO?",
@@ -126,27 +126,25 @@
 				}
 			],
 			"glossries": [
-				
 				{
-					"title" : "Datenschutz: DSGVO",
-					"questions" :[
+					"title": "Datenschutz: DSGVO",
+					"questions": [
 						"<red>Betroffene Person</red>\n\nEine natürliche Person, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, einer Kennnummer usw., identifiziert werden kann.\n",
 						"<red>Personenbezogene Daten</red>\n\nAlle Auskünfte, die sich auf eine bestimmte oder bestimmbare natürliche Person („betroffene Person“) beziehen.\n",
 						"<red>Sensible Daten</red>\n\nPersonenbezogene Daten, aus denen die rassische und ethnische Herkunft, politische Meinungen, religiöse oder weltanschauliche Überzeugungen oder eine Gewerkschaftszugehörigkeit hervorgehen, sowie genetische Daten, biometrische Daten, Gesundheitsdaten oder Daten zum Sexualleben oder zur sexuellen Orientierung einer natürlichen Person. Auch als „besondere Kategorien personenbezogener Daten“ bezeichnet. Weitere Informationen\n"
 					]
 				},
-				
 				{
-					"title" : "Deck B:",
-					"list" :[
+					"title": "Deck B:",
+					"list": [
 						"first one",
 						"second one",
 						"third One"
 					]
 				},
 				{
-					"title" : "Deck C:",
-					"list" :[
+					"title": "Deck C:",
+					"list": [
 						"first one",
 						"second one",
 						"third One"
@@ -155,24 +153,20 @@
 			]
 		},
 		{
-			"categoryName" : "BARRIERE-FREIHEIT",
-			"FlashCardMaker" : "WI",
-			"explanation" : "Beschreibung dieser Kategorie<br>Fragen und Antworten zur Zertifizierung",
-
+			"categoryName": "BARRIERE-FREIHEIT",
+			"FlashCardMaker": "WI",
+			"explanation": "Beschreibung dieser Kategorie<br>Fragen und Antworten zur Zertifizierung",
 			"slides": [
 				{
 					"First Side": "Weshalb ist Barrierefreiheit nötig?",
 					"Second Side": "Viele Benutzerinnen und Benutzer sind auf die individuelle Anpassbarkeit angewiesen, etwa die Schriftvergrösserung im Browser oder sie verwenden ein spezielles Ausgabegerät, beispielsweise das Bildschirmleseprogramm (Screen-Reader) eines Blinden.",
 					"Learn more": "Gerne vergessen gehen die zahlreichen Tastaturbediener, die also keine Maus nutzen. Das Spektrum der Menschen mit einer Behinderung reicht von altersbedingten Mobilitäts- und Seh-Einschränkungen über den motorisch eingeschränkten Tetraplegiker bis zum Blinden. Es gibt viele weiche und individuell geprägte Barrieren, vor denen die vielen Nutzergruppen stehen. <redthin>Gerade diesen Bevölkerungsteilen bietet sich mit den internetbasierten Kommunikations­technologien ein grosser Schritt zur Teilhabe an Information, an Bildung und Geselligkeit an.</redthin>"
-					
 				},
 				{
 					"First Side": "Wer braucht Barrierefreiheit?",
 					"Second Side": "Durch eine körperliche, geistige oder psychische Behinderung kann die Nutzung des Internets erschwert oder verunmöglicht werden. Je nach Behinderung sind die Auswirkungen auf das Arbeiten am Computer und somit auch die Anforderungen unterschiedlich.",
 					"Learn more": "Behinderungskategorien und ihre Anforderungen im Hinblick auf die Internet-Nutzung: "
-					
-				},	
-				
+				},
 				{
 					"First Side": "This is a <link href='https://flutter.dev'> Link </link>",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
@@ -182,16 +176,16 @@
 			"glossries": []
 		},
 		{
-			"categoryName" : "Deck C",
-			"FlashCardMaker" : "AB",
-			"explanation" : "Third Deck explanation",
-
+			"categoryName": "Deck C",
+			"FlashCardMaker": "AB",
+			"explanation": "Third Deck explanation",
 			"slides": [
 				{
 					"First Side": "<bold>Was</bold> ist <red>die</red> DSGVO?",
 					"Second Side": "<red>Eine</red> Verordnung der Europäischen Union, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die Sicherheit und den Schutz von personenbezogenen Daten.",
 					"Learn more": "<red>Mit</red> Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden."
-				},	{
+				},
+				{
 					"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
@@ -200,16 +194,16 @@
 			"glossries": []
 		},
 		{
-			"categoryName" : "Deck D",
-			"FlashCardMaker" : "AB",
-			"explanation" : "Third Deck explanation",
-
+			"categoryName": "Deck D",
+			"FlashCardMaker": "AB",
+			"explanation": "Third Deck explanation",
 			"slides": [
 				{
 					"First Side": "<bold>Was</bold> ist <red>die</red> DSGVO?",
 					"Second Side": "<red>Eine</red> Verordnung der Europäischen Union, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die Sicherheit und den Schutz von personenbezogenen Daten.",
 					"Learn more": "<red>Mit</red> Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden."
-				},	{
+				},
+				{
 					"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
@@ -218,16 +212,16 @@
 			"glossries": []
 		},
 		{
-			"categoryName" : "Deck E",
-			"FlashCardMaker" : "AB",
-			"explanation" : "Third Deck explanation",
-
+			"categoryName": "Deck E",
+			"FlashCardMaker": "AB",
+			"explanation": "Third Deck explanation",
 			"slides": [
 				{
 					"First Side": "<bold>Was</bold> ist <red>die</red> DSGVO?",
 					"Second Side": "<red>Eine</red> Verordnung der Europäischen Union, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die Sicherheit und den Schutz von personenbezogenen Daten.",
 					"Learn more": "<red>Mit</red> Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden."
-				},	{
+				},
+				{
 					"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."

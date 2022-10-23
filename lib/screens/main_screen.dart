@@ -48,7 +48,16 @@ class _MainScreenState extends ConsumerState<MainScreen> {
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) => loadData());
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      List<String> activeLanguages =
+          AppLocalizations.of(context)!.getActiveLanguages();
+      if (!activeLanguages
+          .contains(Localizations.localeOf(context).languageCode)) {
+        ref
+            .read(localizationStateManagerProvider.notifier)
+            .switchLanguage(activeLanguages[0]);
+      }
+    });
 
     super.initState();
     SystemChrome.setPreferredOrientations([
@@ -67,6 +76,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    loadData();
     return Scaffold(
       appBar: AppBar(
         shape: const Border(top: BorderSide(color: Colors.green, width: 3)),
@@ -92,17 +102,18 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 ),
               ),
               Expanded(
-                  flex: 2,
-                  child: Center(
-                    child: AutoSizeText(
-                        page == 0 ? "Accelerated Learning" : "FlashDecks",
-                        maxLines: 1,
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontFamily: "RobotoSerif",
-                            fontSize: 20,
-                            fontWeight: FontWeight.w300)),
-                  )),
+                flex: 2,
+                child: Center(
+                  child: AutoSizeText(
+                      page == 0 ? "Accelerated Learning" : "FlashDecks",
+                      maxLines: 1,
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor,
+                          fontFamily: "RobotoSerif",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w300)),
+                ),
+              ),
               Expanded(
                 flex: 1,
                 child: Row(
@@ -117,10 +128,9 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                           .read(localizationStateManagerProvider.notifier)
                           .switchLanguage(value),
                       itemBuilder: (BuildContext context) {
-                        return {
-                          "en",
-                          "de",
-                        }.map((String choice) {
+                        return AppLocalizations.of(context)!
+                            .getActiveLanguages()
+                            .map((String choice) {
                           bool isSelected =
                               Localizations.localeOf(context).languageCode ==
                                   choice;

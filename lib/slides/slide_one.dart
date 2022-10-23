@@ -99,7 +99,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       ),
                       const Spacer(),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           RichText(
                             text: TextSpan(
@@ -144,6 +144,15 @@ class _SlideOneState extends ConsumerState<SlideOne> {
 
       FontWeight fontWeight =
           element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
+
+      TextStyle tagTextStyle = TextStyle(
+          fontFamily: "RobotoSerif",
+          fontWeight: fontWeight,
+          decoration: element.isUnderLine ? TextDecoration.underline : null,
+          decorationColor:
+              (element.decorationColor != "") ? Color(decorationColor) : null,
+          fontSize: (element.fontSize != 0) ? element.fontSize : null,
+          color: (element.color != "") ? Color(color) : null);
       setState(() {
         tags.putIfAbsent(element.tag, () {
           if (element.tag == 'link') {
@@ -152,18 +161,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                 final String? link = attrs['href'];
                 launch(link!);
               },
-              style: GoogleFonts.robotoCondensed(
-                  textStyle: TextStyle(
-                      fontFamily: "RobotoSerif",
-                      fontWeight: fontWeight,
-                      decoration:
-                          element.isUnderLine ? TextDecoration.underline : null,
-                      decorationColor: (element.decorationColor != "")
-                          ? Color(decorationColor)
-                          : null,
-                      fontSize:
-                          (element.fontSize != 0) ? element.fontSize : null,
-                      color: (element.color != "") ? Color(color) : null)),
+              style: tagTextStyle,
             );
           } else if (element.tag == 'tooltip') {
             return StyledTextWidgetBuilderTag(
@@ -180,39 +178,12 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       ),
                   child: Text(
                     attributes['text']!,
-                    style: TextStyle(
-                        fontFamily: "RobotoSerif",
-                        fontWeight: fontWeight,
-                        decoration: element.isUnderLine
-                            ? TextDecoration.underline
-                            : null,
-                        decorationColor: (element.decorationColor != "")
-                            ? Color(decorationColor)
-                            : null,
-                        fontSize: (element.fontSize != 0)
-                            ? element.fontSize
-                            : (MediaQuery.of(context).size.longestSide /
-                                    MediaQuery.of(context).size.shortestSide) *
-                                15,
-                        color: (element.color != "") ? Color(color) : null),
+                    style: tagTextStyle,
                   )),
             );
           } else {
             return StyledTextTag(
-              style: GoogleFonts.robotoCondensed(
-                  textStyle: TextStyle(
-                      fontWeight: fontWeight,
-                      decoration:
-                          element.isUnderLine ? TextDecoration.underline : null,
-                      decorationColor: (element.decorationColor != "")
-                          ? Color(decorationColor)
-                          : null,
-                      fontSize: (element.fontSize != 0)
-                          ? element.fontSize
-                          : (MediaQuery.of(context).size.longestSide /
-                                  MediaQuery.of(context).size.shortestSide) *
-                              15,
-                      color: (element.color != "") ? Color(color) : null)),
+              style: tagTextStyle,
             );
           }
         });

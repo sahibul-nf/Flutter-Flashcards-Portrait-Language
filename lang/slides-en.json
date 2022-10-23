@@ -3,7 +3,7 @@
 	"lesson": "Q & A",
 	"welcome": "Welcome",
 	"main_screen_subtitle" : "Use this flashcards to learn and understand vocabulary, terms and data protection regulations.",
-	"learn_more" : "Learn more...",
+	"learn_more" : "Learn more >",
 	"start_studying" : "Start Studying",
 	"got_it": "Got it",
 	"missed_it" :"Missed it",
@@ -12,38 +12,45 @@
 	"impressum" : "Impressum",
 	"question" : "QUESTION",
 	"answer" : "ANSWER",
+	"activeLanguages" : [
+		"en",
+		"de"
+	],
 	"tags": [
 		{
 			"tag_name": "tooltip",
-			"fontWeight": "bold",
-			"color" : "c16464",
-			"decorationColor" : "006D5B",
-			"messageFontSize" : 16,
+			"color": "c16464",
+			"decorationColor": "006D5B",
+			"messageFontSize": 16,
+			"fontSize": 20,
 			"underLine": true
 		},
 		{
 			"tag_name": "bold",
-			"fontWeight" : "bold",
-			"fontSize" : 36 
+			"fontWeight": "bold"
+		},
+		{
+			"tag_name": "bold36",
+			"fontWeight": "bold",
+			"fontSize": 36
 		},
 		{
 			"tag_name": "red",
 			"fontWeight": "bold",
-			"color" : "c16464"
+			"color": "c16464"
 		},
 		{
 			"tag_name": "redthin",
-			"color" : "c16464"
+			"color": "c16464"
 		},
 		{
 			"tag_name": "boldtxt",
-			"fontWeight": "bold",
-			"fontSize" : 19
+			"fontWeight": "bold"
 		},
 		{
 			"tag_name": "font",
-			"font-family" : "Roboto",
-			"fontSize" : 42 
+			"font-family": "Roboto",
+			"fontSize": 42
 		}
 	],
 	"Categories" : [

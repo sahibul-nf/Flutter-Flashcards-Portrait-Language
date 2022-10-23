@@ -46,6 +46,7 @@ class MyApp extends ConsumerWidget {
         }
         // If the locale of the device is not supported, use the first one
         // from the list (English, in this case).
+
         return supportedLocales.first;
       },
       theme: ThemeData(
