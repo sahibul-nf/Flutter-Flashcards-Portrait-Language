@@ -94,13 +94,12 @@ class LearnMore extends ConsumerWidget {
                     padding: const EdgeInsets.all(15.0),
                     child: StyledText(
                       text: text,
-                      style: GoogleFonts.robotoCondensed(
-                        textStyle: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 19,
-                          height: 1.7,
-                        ),
+                      style: TextStyle(
+                        fontFamily: "RobotoSerif",
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 19,
+                        height: 1.7,
                       ),
                       tags: tags,
                     ),

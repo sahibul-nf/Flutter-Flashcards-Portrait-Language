@@ -3,7 +3,7 @@
 	"lesson": "Q & A",
 	"welcome": "Willkommen",
 	"main_screen_subtitle": "Nutze diese Lernkarten, um Vokabeln, Begriffe und Datenschutzbestimmungen zu lernen und zu verstehen.",
-	"learn_more": "Mehr erfahren >",
+	"learn_more": "Mehr erfahren",
 	"start_studying": "Beginne zu lernen",
 	"got_it": "Ich habs",
 	"missed_it": "Nochmal",
@@ -19,10 +19,8 @@
 	"tags": [
 		{
 			"tag_name": "tooltip",
-			"color": "c16464",
-			"decorationColor": "006D5B",
 			"messageFontSize": 16,
-			"fontSize": 20,
+			"fontSize": 19,
 			"underLine": true
 		},
 		{

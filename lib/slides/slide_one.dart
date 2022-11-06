@@ -98,31 +98,48 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                         tags: tags,
                       ),
                       const Spacer(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          RichText(
-                            text: TextSpan(
-                              text: AppLocalizations.of(context)!
-                                  .translate('learn_more')!,
-                              style: GoogleFonts.robotoCondensed(
-                                  textStyle: const TextStyle(
-                                height: 1.7,
-                                color: Colors.blue,
-                                fontSize: 19,
-                              )),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => LearnMore(
-                                              categoryName: widget.categoryName,
-                                              tags: tags,
-                                              text: widget.slide.learnMore)),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 5),
+                        child: Row(
+                          children: [
+                            const Spacer(),
+                            Expanded(
+                              flex: 3,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.grey.shade100,
+                                  shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                          color: Colors.blue, width: 0.8),
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                  padding: const EdgeInsets.all(15.0),
+                                ),
+                                onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LearnMore(
+                                        categoryName: widget.categoryName,
+                                        tags: tags,
+                                        text: widget.slide.learnMore),
+                                  ),
+                                ),
+                                child: Text(
+                                  AppLocalizations.of(context)!
+                                      .translate('learn_more')!,
+                                  style: GoogleFonts.robotoCondensed(
+                                    textStyle: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.blue.shade800,
+                                      fontSize: 17,
                                     ),
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                        ],
+                            const Spacer(),
+                          ],
+                        ),
                       ),
                     ],
                   ),

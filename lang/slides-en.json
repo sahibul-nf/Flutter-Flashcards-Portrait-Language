@@ -3,7 +3,7 @@
 	"lesson": "Q & A",
 	"welcome": "Welcome",
 	"main_screen_subtitle" : "Use this flashcards to learn and understand vocabulary, terms and data protection regulations.",
-	"learn_more" : "Learn more >",
+	"learn_more" : "Learn More",
 	"start_studying" : "Start Studying",
 	"got_it": "Got it",
 	"missed_it" :"Missed it",
@@ -19,10 +19,8 @@
 	"tags": [
 		{
 			"tag_name": "tooltip",
-			"color": "c16464",
-			"decorationColor": "006D5B",
 			"messageFontSize": 16,
-			"fontSize": 20,
+			"fontSize": 19,
 			"underLine": true
 		},
 		{
