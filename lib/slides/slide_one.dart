@@ -1,6 +1,5 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_flashcards_portrait/app_localizations.dart';
 import 'package:flutter_flashcards_portrait/models/tags.dart';
@@ -107,7 +106,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                               flex: 3,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  primary: Colors.grey.shade100,
+                                  backgroundColor: Colors.grey.shade100,
                                   shape: RoundedRectangleBorder(
                                       side: const BorderSide(
                                           color: Colors.blue, width: 0.8),
@@ -128,7 +127,6 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                                       .translate('learn_more')!,
                                   style: GoogleFonts.robotoCondensed(
                                     textStyle: TextStyle(
-                                      fontWeight: FontWeight.bold,
                                       decoration: TextDecoration.underline,
                                       color: Colors.blue.shade800,
                                       fontSize: 17,
@@ -176,7 +174,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
             return StyledTextActionTag(
               (String? text, Map<String?, String?> attrs) async {
                 final String? link = attrs['href'];
-                launch(link!);
+                launchUrl(Uri.parse(link!));
               },
               style: tagTextStyle,
             );
