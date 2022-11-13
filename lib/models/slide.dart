@@ -1,11 +1,9 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:equatable/equatable.dart';
 
 class Slide extends Equatable {
-  String firstSide;
-  String secondSide;
-  String learnMore;
+  final String firstSide;
+  final String secondSide;
+  final String learnMore;
   bool? answer;
 
   Slide({

@@ -18,6 +18,11 @@
 	],
 	"tags": [
 		{
+			"tag_name" : "link",
+			"underLine": true,
+			"color" : "c16464"
+		},
+		{
 			"tag_name": "tooltip",
 			"messageFontSize": 16,
 			"fontSize": 19,

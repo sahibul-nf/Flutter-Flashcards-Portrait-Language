@@ -1,15 +1,13 @@
-// ignore_for_file: must_be_immutable
-
-import 'package:equatable/equatable.dart';
 import 'glossry.dart';
 import 'slide.dart';
+import 'package:collection/collection.dart';
 
-class Category extends Equatable {
-  String categoryName;
-  String flashCardMaker;
-  String explanation;
-  List<Slide> slides;
-  List<Glossry> glossries;
+class Category {
+  final String categoryName;
+  final String flashCardMaker;
+  final String explanation;
+  final List<Slide> slides;
+  final List<Glossry> glossries;
 
   Category({
     required this.slides,
@@ -43,6 +41,14 @@ class Category extends Equatable {
   }
 
   @override
-  List<Object> get props =>
-      [categoryName, flashCardMaker, explanation, slides, glossries];
+  operator ==(o) =>
+      o is Category &&
+      o.categoryName == categoryName &&
+      o.flashCardMaker == flashCardMaker &&
+      const DeepCollectionEquality.unordered().equals(o.slides, slides) &&
+      const DeepCollectionEquality.unordered().equals(o.glossries, glossries);
+
+  @override
+  int get hashCode => Object.hash(categoryName, flashCardMaker, explanation,
+      Object.hashAll(slides), Object.hashAll(glossries));
 }
