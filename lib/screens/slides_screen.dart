@@ -324,8 +324,7 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              Colors.grey.shade100, //const Color(0xffF16623),
+                          backgroundColor: Colors.grey.shade100,
                           shape: RoundedRectangleBorder(
                               side: const BorderSide(
                                   color: Colors.red, width: 0.5),

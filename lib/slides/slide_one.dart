@@ -102,35 +102,32 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                         child: Row(
                           children: [
                             const Spacer(),
-                            Expanded(
-                              flex: 3,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.grey.shade100,
-                                  shape: RoundedRectangleBorder(
-                                      side: const BorderSide(
-                                          color: Colors.blue, width: 0.8),
-                                      borderRadius: BorderRadius.circular(5.0)),
-                                  padding: const EdgeInsets.all(15.0),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.grey.shade100,
+                                shape: RoundedRectangleBorder(
+                                    side: const BorderSide(
+                                        color: Colors.blue, width: 0.5),
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                padding: const EdgeInsets.all(10.0),
+                              ),
+                              onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LearnMore(
+                                      categoryName: widget.categoryName,
+                                      tags: tags,
+                                      text: widget.slide.learnMore),
                                 ),
-                                onPressed: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => LearnMore(
-                                        categoryName: widget.categoryName,
-                                        tags: tags,
-                                        text: widget.slide.learnMore),
-                                  ),
-                                ),
-                                child: Text(
-                                  AppLocalizations.of(context)!
-                                      .translate('learn_more')!,
-                                  style: GoogleFonts.robotoCondensed(
-                                    textStyle: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.blue.shade800,
-                                      fontSize: 17,
-                                    ),
+                              ),
+                              child: Text(
+                                AppLocalizations.of(context)!
+                                    .translate('learn_more')!,
+                                style: GoogleFonts.robotoCondensed(
+                                  textStyle: TextStyle(
+                                    decoration: TextDecoration.underline,
+                                    color: Colors.blue.shade500,
+                                    fontSize: 14,
                                   ),
                                 ),
                               ),

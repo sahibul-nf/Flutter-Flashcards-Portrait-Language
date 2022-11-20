@@ -30,16 +30,18 @@ class LearnMore extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                const Spacer(flex: 2),
-                AutoSizeText(
-                  AppLocalizations.of(context)!.translate('learn_more')!,
-                  maxLines: 1,
-                  style: const TextStyle(
-                      fontSize: 20,
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold),
+                Expanded(
+                  child: Center(
+                    child: AutoSizeText(
+                      AppLocalizations.of(context)!.translate('learn_more')!,
+                      maxLines: 1,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
                 ),
-                const Spacer(flex: 3),
                 PopupMenuButton<String>(
                   child: Icon(
                     Icons.more_vert,
@@ -77,8 +79,9 @@ class LearnMore extends ConsumerWidget {
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                  child: Text(
+                  child: AutoSizeText(
                     categoryName,
+                    maxLines: 1,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.oswald(
                       textStyle: TextStyle(
