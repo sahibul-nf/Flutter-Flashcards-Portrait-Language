@@ -104,6 +104,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                             const Spacer(),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
+                                shadowColor: Colors.transparent,
                                 backgroundColor: Colors.grey.shade100,
                                 shape: RoundedRectangleBorder(
                                     side: const BorderSide(
